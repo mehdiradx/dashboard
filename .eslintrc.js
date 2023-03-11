@@ -26,5 +26,6 @@ module.exports = {
     'prettier/prettier': ['error', { semi: true }],
     'react/jsx-uses-react': 'error',
     'react/prop-types': 'off', // TODO: fix it
+    'import/prefer-default-export': 'off',
   },
 };
