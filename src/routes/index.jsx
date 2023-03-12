@@ -24,11 +24,7 @@ const getUserData = () =>
 
 export default createBrowserRouter(
   createRoutesFromElements(
-    <Route
-      element={<AppLayout />}
-      loader={() => defer({ userPromise: getUserData() })}
-      errorElement={<div>Error in main routes</div>}
-    >
+    <Route element={<AppLayout />} loader={() => defer({ userPromise: getUserData() })}>
       <Route element={<HomeLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
