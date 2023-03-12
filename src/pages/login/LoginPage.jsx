@@ -1,14 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import LoginForm from 'components/login/LoginForm';
 import { useAuth } from 'hooks/useAuth';
 import { Alert, Title } from 'components/UiKit';
 import { status } from 'model';
-
-const error = null;
-const loginDataStatus = status.IDLE;
+import { selectLoginError, selectLoginStatus } from 'store/login';
 
 function LoginPage() {
   const { login } = useAuth();
+  const loginDataStatus = useSelector(selectLoginStatus);
+  const error = useSelector(selectLoginError);
 
   const onSubmitLogin = async data => {
     login(data);
